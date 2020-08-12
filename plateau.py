@@ -39,6 +39,30 @@ def voisinsCases (Plateau, cases=[[0,0],[0,0]]):
     return neigh
 
 print(voisinsCases(Plateau, [[0,1],[1,2]]))
-def accessibles (Platean, case):
-    firstneigh = voisinsCase(Plateau, case)
+def accessibles (Platean, deb):
+    firstneigh = voisinsCase(Plateau,deb)
+    neigh= [deb,firstneigh]
+    while (firstneigh != [len(Plateau), len(Plateau[1])]):
+        
+        secneigh= voisinsCase(Plateau,firstneigh)
+        
+        N = neigh.append(secneigh)
+        firstneigh = secneigh
+    return N
+    
+print (accessibles(Plateau, [1,3]))
+
+def chemin (Plateau, deb,fin):
+    neighborsList= accessibles(Plateau,deb)
+    for i in neighborList :
+        if i == fin:
+            break
+            return True
+        else:
+            return False
+print (chemin(Plateau, [1,3],[0,1]))
+
+
+       
+    
     
